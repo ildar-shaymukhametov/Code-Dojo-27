@@ -30,8 +30,7 @@ namespace test
         public void Drinking_from_glass_removes_1_ounce_of_remaining_liquid()
         {
             var amountToDrink = 1;
-            var glass = new Glass();
-            glass.Fill(10);
+            var glass = CreateGlass();
             var expected = glass.RemainingLiquid - amountToDrink;
             glass.Drink();
             Assert.Equal(expected, glass.RemainingLiquid);
@@ -41,8 +40,7 @@ namespace test
         public void Quaffing_from_glass_removes_4_ounces_of_remaining_liquid()
         {
             var amountToDrink = 4;
-            var glass = new Glass();
-            glass.Fill(10);
+            var glass = CreateGlass();
             var expected = glass.RemainingLiquid - amountToDrink;
             glass.Quaff();
             Assert.Equal(expected, glass.RemainingLiquid);
@@ -51,10 +49,16 @@ namespace test
         [Fact]
         public void Downing_in_one_removes_makes_glass_empty()
         {
-            var glass = new Glass();
-            glass.Fill(10);
+            var glass = CreateGlass();
             glass.DownInOne();
             Assert.True(glass.IsEmpty);
+        }
+
+        private static Glass CreateGlass()
+        {
+            var glass = new Glass();
+            glass.Fill(10);
+            return glass;
         }
     }
 }
