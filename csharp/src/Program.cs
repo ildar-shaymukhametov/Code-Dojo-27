@@ -21,6 +21,11 @@ namespace src
         {
             Amount += amount;
         }
+
+        public void Drink()
+        {
+            Amount -= 1;
+        }
     }
 
     public class Pub
