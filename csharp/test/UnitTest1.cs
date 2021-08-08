@@ -28,18 +28,18 @@ namespace test
         }
 
         [Fact]
-        public void Drinking_from_glass_removes_1_ounce_of_beer()
+        public void Drinking_from_glass_removes_1_ounce_of_remaining_liquid()
         {
             var amountToDrink = 1;
             var glass = new Glass();
             glass.Fill(10);
-            var expectedAmountOfBeer = glass.Amount - amountToDrink;
+            var expected = glass.Amount - amountToDrink;
             glass.Drink();
-            Assert.Equal(expectedAmountOfBeer, glass.Amount);
+            Assert.Equal(expected, glass.Amount);
         }
 
         [Fact]
-        public void Quaffing_from_glass_removes_4_ounces_of_beer()
+        public void Quaffing_from_glass_removes_4_ounces_of_remaining_liquid()
         {
             var amountToDrink = 4;
             var glass = new Glass();
