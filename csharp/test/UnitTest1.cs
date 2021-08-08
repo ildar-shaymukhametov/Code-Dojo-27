@@ -6,7 +6,7 @@ namespace test
     public class UnitTest1
     {
         [Fact]
-        public void Pub_serves_beer_in_1_pint_glasses()
+        public void Pub_serves_beer_in_20_ounce_glasses()
         {
             Glass glass = new Pub().ServeBeer();
             Assert.Equal(20, glass.Capacity);
@@ -47,7 +47,7 @@ namespace test
         }
 
         [Fact]
-        public void Downing_in_one_removes_makes_glass_empty()
+        public void Downing_in_one_makes_glass_empty()
         {
             var glass = CreateGlass();
             glass.DownInOne();
