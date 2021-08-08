@@ -17,7 +17,7 @@ namespace test
         {
             var expectedAmountOfBeer = 20;
             Glass glass = new Pub().ServeBeer();
-            Assert.Equal(expectedAmountOfBeer, glass.Amount);
+            Assert.Equal(expectedAmountOfBeer, glass.RemainingLiquid);
         }
 
         [Fact]
@@ -33,9 +33,9 @@ namespace test
             var amountToDrink = 1;
             var glass = new Glass();
             glass.Fill(10);
-            var expected = glass.Amount - amountToDrink;
+            var expected = glass.RemainingLiquid - amountToDrink;
             glass.Drink();
-            Assert.Equal(expected, glass.Amount);
+            Assert.Equal(expected, glass.RemainingLiquid);
         }
 
         [Fact]
@@ -44,9 +44,9 @@ namespace test
             var amountToDrink = 4;
             var glass = new Glass();
             glass.Fill(10);
-            var expected = glass.Amount - amountToDrink;
+            var expected = glass.RemainingLiquid - amountToDrink;
             glass.Quaff();
-            Assert.Equal(expected, glass.Amount);
+            Assert.Equal(expected, glass.RemainingLiquid);
         }
     }
 }
