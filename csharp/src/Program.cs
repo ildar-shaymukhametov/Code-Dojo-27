@@ -36,6 +36,11 @@ namespace src
         {
             RemainingLiquid = 0;
         }
+
+        public void FillByLandlord()
+        {
+            Fill(20);
+        }
     }
 
     public class Pub

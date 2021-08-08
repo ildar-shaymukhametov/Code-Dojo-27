@@ -53,6 +53,14 @@ namespace test
             glass.DownInOne();
             Assert.True(glass.IsEmpty);
         }
+        
+        [Fact]
+        public void Landlord_fills_glass_with_20_ounces()
+        {
+            var glass = new Glass();
+            glass.FillByLandlord();
+            Assert.Equal(20, glass.RemainingLiquid);
+        }
 
         private static Glass CreateGlass()
         {
