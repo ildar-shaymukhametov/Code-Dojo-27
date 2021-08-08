@@ -14,22 +14,22 @@ namespace src
     public class Glass
     {
         public int Capacity { get; } = 20;
-        public int Amount { get; private set; }
-        public bool IsEmpty => Amount == 0;
+        public int RemainingLiquid { get; private set; }
+        public bool IsEmpty => RemainingLiquid == 0;
 
         public void Fill(int amount)
         {
-            Amount += amount;
+            RemainingLiquid += amount;
         }
 
         public void Drink()
         {
-            Amount -= 1;
+            RemainingLiquid -= 1;
         }
 
         public void Quaff()
         {
-            Amount -= 4;
+            RemainingLiquid -= 4;
         }
     }
 
