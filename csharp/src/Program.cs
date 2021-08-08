@@ -26,6 +26,11 @@ namespace src
         {
             Amount -= 1;
         }
+
+        public void Quaff()
+        {
+            Amount -= 4;
+        }
     }
 
     public class Pub
