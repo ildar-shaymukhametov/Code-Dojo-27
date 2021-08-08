@@ -31,6 +31,11 @@ namespace src
         {
             RemainingLiquid -= 4;
         }
+
+        public void DownInOne()
+        {
+            RemainingLiquid = 0;
+        }
     }
 
     public class Pub

@@ -47,5 +47,14 @@ namespace test
             glass.Quaff();
             Assert.Equal(expected, glass.RemainingLiquid);
         }
+
+        [Fact]
+        public void Downing_in_one_removes_makes_glass_empty()
+        {
+            var glass = new Glass();
+            glass.Fill(10);
+            glass.DownInOne();
+            Assert.True(glass.IsEmpty);
+        }
     }
 }
