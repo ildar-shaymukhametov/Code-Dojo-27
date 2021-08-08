@@ -37,5 +37,16 @@ namespace test
             glass.Drink();
             Assert.Equal(expectedAmountOfBeer, glass.Amount);
         }
+
+        [Fact]
+        public void Quaffing_from_glass_removes_4_ounces_of_beer()
+        {
+            var amountToDrink = 4;
+            var glass = new Glass();
+            glass.Fill(10);
+            var expected = glass.Amount - amountToDrink;
+            glass.Quaff();
+            Assert.Equal(expected, glass.Amount);
+        }
     }
 }
